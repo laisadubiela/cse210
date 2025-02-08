@@ -1,3 +1,5 @@
+// use a log to of how many times activities were performed
+
 using System;
 using System.Diagnostics;
 using Microsoft.Win32.SafeHandles;
@@ -9,8 +11,10 @@ class Program
         Console.WriteLine("Hello World! This is the Mindfulness Project.\n");
 
         int _menu = 9;
+        int _times = 0;
 
         while (_menu != 4){
+            _times += 1;
             Console.Write("Menu Options:\n1. Start Breathing Activity\n2. Start Reflection Activity\n3. Start Listening Activity\n4. Quit\nSelect a choice from the menu: ");
             _menu = int.Parse(Console.ReadLine());
             
@@ -30,6 +34,7 @@ class Program
                 break;
             }
         }
+        Console.WriteLine($"You have complete {_times} activities.");
     }
 }
 }
